@@ -1,0 +1,113 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+	<title>Vis & Society Assignment 2</title>
+	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+</head>
+
+<body>
+	<header>
+		<h1>
+			<small>Assignment 2</small>
+			Exploratory Data Analysis
+		</h1>
+
+		<p>
+			<strong>Neha Hulkund</strong> — <em>nhulkund@mit.edu</em>
+		</p>
+	</header>
+	<main>
+		<section>
+			<h2>Subtheme: Housing for the Rich </h2>
+
+			<h3>Overall Analysis Questions</h3>
+            This dataset contains statistics for all residential sales transactions in the City of Boston between 2000-2023. It has columns with information about sellers, buyers, price, location, whether a sale is a flip or a cash sale, or if the current owner is the buyer. Some data transformation has been done: I was mainly interested in looking at residential data so I filtered for condominiums and single family residences. I’m interested in this dataset because it has different dimensions for what makes a home a luxury/investment property: along the lines of pricing, investor buys, and specific areas in Boston.
+			<ol>
+				<li>When did flipping begin in Boston? Is it a recent trend? How does flipping correlate to cash sales and current ownership of housing? </li>
+				<li>What types of housing units are being built in Boston over the years? Is luxury housing truly outstripping the production of affordable housing?</li>
+				<li>How do luxury and non-luxury houses compare in terms of cash sales, current ownership, flipping, and investors? Who is buying luxury housing?</li>
+			</ol>
+		</section>
+
+		<section>
+			<h2>Discoveries & Insights</h2>
+
+			<figure>
+				<img src="Assignment-2-all/Image1.jpeg" alt="" />
+				<figcaption>
+                    This stacked histogram shows the prices across all residential building types, plotted on a logarithmic scale to visualize the long-tail of the distribution. As we can see, there are many outliers in the dataset, with over 17 thousand counts of residences set at price $0 or $1, indicating some issues with data quality. Furthermore, this indicates that most of the data is made up of condominiums, which make sense because they have the highest density in the city, as indicated in the previous graph. Additionally, luxury residences ($2M+) are also mostly made up of condominiums, with a few multi-unit apartments being worth over $10M. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image2.jpeg" alt="" />
+				<figcaption>
+                    For some preliminary data analysis, I also plotted the counts of the various residential buildings in Boston. As seen in the previous chart, condominiums are clearly the main type of residence. Going forward, I decided to filter all data with either single family residences or condominiums, for fair comparison between luxury/non-luxury residences, where a single buyer is paying over $2M for one residence (rather than a multi-unit). 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image3.jpeg" alt="" />
+				<figcaption>
+                    In this plot, we explore how flipping of residences has changed over time. We plot a bar chart of median median price of residences from 2000 onwards, superimposed with a trend of the percent of sales that were flips over the years. We can see that the number of flips started taking off in 2010 post recession, as prices steadily increase as well. In 2019, there is a sharp increase in median prices, resulting in all time highs. As stated in the Boston Globe article, “the median single-family home price hit a record $908,000… to afford that a household would need an annual income of almost $300,000… that’s around 3x what the median Boston household actually makes”. Our plot supports this story, with the median price of our plot being slightly higher than the article states, potentially because the article may be using a slightly different dataset or filtering techniques.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image4.jpeg" alt="" />
+				<figcaption>
+                    We next compare the percent of sales that are cash, flips, or have current owners between luxury and non-luxury residences. We see that for both flipping and cash sales, luxury housing have significantly higher rates than non-luxury housing. However, interestingly, luxury homes  also have a higher rate of current residence. This may be because luxury here is classified as $2M+. A follow-up question I have is how this would compare to extreme luxury homes (such as the Towers of Wealth in the Boston Globe article)? Would the current residence be lower there? Furthermore, in the same data taken over the years, we see that these trends mostly stay consistent over the years, with the same trends for flipping rising in 2010 being true in both luxury and non-luxury homes. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image5.jpeg" alt="" />
+				<figcaption>
+                    Next, to explore this question of what types of housing is built, we examine residential units built over the years in Boston. I filtered the residences into three categories: luxury ($2M+), median prices ($1M-2M) and under $1M and plotted the number of residences built in these categories after 2000. We see that there was a spike in building under $1M residences in 2006, after which it sharply declined and reamined at low rates from 2006 onwards. In 2015, there were actually more luxury units built than any other. This graph supports statements from the Boston Globe article, which states that “since 2000, more than 50 sizable developments featuring multimillion-dollar condos … in the seven years from 2015 to 2021 alone, that included more than 1,000 new condos now worth $2 million and up.” This led me to the followup question of who is buying these new units? If most Boston households cannot buy the luxury residences, who can? Another followup question is where are these units being built and are there any trends of downtown vs not, etc?
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image6.jpeg" alt="" />
+				<figcaption>
+                    Here, we explore the question of where different types of housing is being built. Once again, we bin the prices into three categories and plot which percent of each zipcode in the greater Boston area is made up of this type of housing. In general, most residences are in downtown, but there is a greater density of luxury housing in the central zipcode of 02116, or the Back Bay/Copley area, known for being one of the most expensive zipcodes in Boston and where multiple of the Towers of Wealth in the Boston Globe article are located (such as One Dalton). 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image7.jpeg" alt="" />
+				<figcaption>
+                    Here, we have plotted the zipcodes of downtown Boston to compare the cash sales, flipping, and rates of current residence. We can see that the average flipping percent is concentrated around downtown Boston, matching with where the luxury homes are and with the bottom map, which plots where the highest levels of investor sales are. However, cash sales are more spread out, with an exception of a large concentration of cash sales in zipcode 02115, where many of the Towers of Wealth are located. Additionally, we are seeing that the rates of current residence are fairly high, with most of the zipcodes having current owners. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image8.jpeg" alt="" />
+				<figcaption>
+                    To explore the question of who is buying the new real estate properties, I looked into the splits of investors for luxury vs. nonluxury housing, classifying luxury housing as any condominium/1-fam residence worth over $2M (as per the Globe article). We see that non-investors are mostly buying the non-luxury units, with over 79% of the non-luxury residences being bought by non-investors. However, for luxury homes, a far greater percentage are bought by investors, with overall investor buys (institutional, large, medium, small) outnumbering non-investor buys. From this, we can start drawing conclusions that luxury homes are primarily being bought by investors as flipping properties or long-term investments, rather than actual homes to stay in. 
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image9.jpeg" alt="" />
+				<figcaption>
+                    In this plot, we explore the question of how long the flip term should be for different price points for optimal price difference/percent. We see that in all cases, not flipping (holding the property for longer) generally leads to the largest gains, which is an obvious point. Usually, the trend holds that long-term > medium term > short term flips for all price points, but interestingly, the amount of percentage gain on luxury properties is highest for the medium-term flip, indicating greater market volatility there.
+				</figcaption>
+			</figure>
+
+			<figure>
+				<img src="Assignment-2-all/Image10.jpeg" alt="" />
+				<figcaption>
+				ENTER IMAGE CAPTION HERE.
+				</figcaption>
+			</figure>
+		</section>
+
+		<section>
+			<h2>Summary</h2>
+
+			<p>WRITE FINAL SUMMARY HERE.</p>
+		</section>
+	</main>
+</body>
+</html>
